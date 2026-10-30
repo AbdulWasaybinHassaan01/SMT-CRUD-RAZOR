@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "9Up+IlAmVxRlJDq/87Mjw4itGL074+Vphd07GQ8Sp6U=",
+  "Source": "CRUD_Razor",
+  "BasePath": "_content/CRUD_Razor",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CRUD_Razor\\wwwroot",
+      "Source": "CRUD_Razor",
+      "ContentRoot": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\wwwroot\\",
+      "BasePath": "_content/CRUD_Razor",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CRUD_Razor.styles.css",
+      "SourceId": "CRUD_Razor",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/CRUD_Razor",
+      "RelativePath": "CRUD_Razor.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CRUD_Razor.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CRUD_Razor.bundle.scp.css",
+      "SourceId": "CRUD_Razor",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/CRUD_Razor",
+      "RelativePath": "CRUD_Razor.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CRUD_Razor.bundle.scp.css"
+    }
+  ]
+}

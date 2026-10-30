@@ -1,0 +1,111 @@
+@page "{id:int}"
+@model CRUD_Razor.Pages.Computers.DetailsModel
+@{
+    ViewData["Title"] = $"{Model.Computer.Brand} {Model.Computer.Model} - Details";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <a asp-page="Index" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left"></i> Back to Computers
+            </a>
+            <div class="d-flex gap-2">
+                <a asp-page="Edit" asp-route-id="@Model.Computer.Id" class="btn btn-warning btn-sm">
+                    <i class="bi bi-pencil me-1"></i> Edit
+                </a>
+                <a asp-page="Delete" asp-route-id="@Model.Computer.Id" class="btn btn-outline-danger btn-sm">
+                    <i class="bi bi-trash me-1"></i> Delete
+                </a>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm overflow-hidden">
+            <div class="card-header bg-primary text-white p-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <span class="badge bg-white text-primary mb-2">ID #@Model.Computer.Id</span>
+                        <h2 class="h3 fw-bold mb-1">@Model.Computer.Brand @Model.Computer.Model</h2>
+                        <p class="mb-0 text-white-50"><i class="bi bi-laptop me-1"></i> Hardware Specifications</p>
+                    </div>
+                    <div>
+                        @{
+                            string badgeClass = Model.Computer.Status switch
+                            {
+                                "In Stock" => "bg-success text-white",
+                                "In Use" => "bg-light text-dark",
+                                "Maintenance" => "bg-warning text-dark",
+                                "Retired" => "bg-secondary text-white",
+                                _ => "bg-light text-dark"
+                            };
+                        }
+                        <span class="badge @badgeClass fs-6 px-3 py-2">
+                            @(string.IsNullOrWhiteSpace(Model.Computer.Status) ? "Active" : Model.Computer.Status)
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-light rounded-3">
+                            <div class="text-muted small fw-semibold text-uppercase">Brand / Manufacturer</div>
+                            <div class="fs-5 fw-bold text-dark">@Model.Computer.Brand</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-light rounded-3">
+                            <div class="text-muted small fw-semibold text-uppercase">Model Name</div>
+                            <div class="fs-5 fw-bold text-dark">@Model.Computer.Model</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-light rounded-3">
+                            <div class="text-muted small fw-semibold text-uppercase">Processor (CPU)</div>
+                            <div class="fs-5 fw-medium text-dark">
+                                <i class="bi bi-cpu me-1 text-primary"></i>
+                                @(string.IsNullOrWhiteSpace(Model.Computer.Processor) ? "Not Specified" : Model.Computer.Processor)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-light rounded-3">
+                            <div class="text-muted small fw-semibold text-uppercase">RAM (Memory)</div>
+                            <div class="fs-5 fw-medium text-dark">
+                                <i class="bi bi-memory me-1 text-primary"></i>
+                                @(string.IsNullOrWhiteSpace(Model.Computer.Ram) ? "Not Specified" : Model.Computer.Ram)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-light rounded-3">
+                            <div class="text-muted small fw-semibold text-uppercase">Storage (SSD / HDD)</div>
+                            <div class="fs-5 fw-medium text-dark">
+                                <i class="bi bi-device-ssd me-1 text-primary"></i>
+                                @(string.IsNullOrWhiteSpace(Model.Computer.Storage) ? "Not Specified" : Model.Computer.Storage)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="p-3 bg-light rounded-3">
+                            <div class="text-muted small fw-semibold text-uppercase">Price</div>
+                            <div class="fs-5 fw-bold text-success">
+                                @(Model.Computer.Price.HasValue ? $"${Model.Computer.Price.Value:N2}" : "Not Set")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer bg-light border-0 p-3 text-end">
+                <a asp-page="Index" class="btn btn-secondary px-4">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

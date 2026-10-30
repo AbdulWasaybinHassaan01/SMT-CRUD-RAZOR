@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CRUD_Razor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CRUD_Razor.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CRUD_Razor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CRUD_Razor.props",
+      "PackagePath": "build\\CRUD_Razor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CRUD_Razor.props",
+      "PackagePath": "buildMultiTargeting\\CRUD_Razor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CRUD_Razor.props",
+      "PackagePath": "buildTransitive\\CRUD_Razor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

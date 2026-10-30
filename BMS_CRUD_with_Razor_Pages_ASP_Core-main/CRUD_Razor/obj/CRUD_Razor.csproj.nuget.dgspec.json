@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\CRUD_Razor.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\CRUD_Razor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\CRUD_Razor.csproj",
+        "projectName": "CRUD_Razor",
+        "projectPath": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\CRUD_Razor.csproj",
+        "packagesPath": "C:\\Users\\WaSaY\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WaSaY\\Desktop\\BMS_CRUD_with_Razor_Pages_ASP_Core-main\\CRUD_Razor\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\WaSaY\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.426/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

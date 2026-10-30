@@ -1,0 +1,21 @@
+-- SQLite Database Schema for Computers Management System
+-- Database file: computers.db (created automatically on startup)
+
+CREATE TABLE IF NOT EXISTS Computers (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Brand TEXT NOT NULL,
+    Model TEXT NOT NULL,
+    Processor TEXT NULL,
+    Ram TEXT NULL,
+    Storage TEXT NULL,
+    Price REAL NULL,
+    Status TEXT NULL
+);
+
+-- Connection string in appsettings.json:
+-- "ConnectionStrings": {
+--     "DefaultConnection": "Data Source=computers.db"
+-- }
+--
+-- Package used: Microsoft.Data.Sqlite
+-- Note: No SQL Server or SSMS is needed!

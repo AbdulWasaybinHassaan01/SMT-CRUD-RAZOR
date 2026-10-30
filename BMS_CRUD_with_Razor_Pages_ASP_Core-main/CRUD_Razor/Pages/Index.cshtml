@@ -1,0 +1,59 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Welcome - Computer Management System";
+}
+
+<div class="row align-items-center py-5">
+    <div class="col-lg-7 text-center text-lg-start mb-4 mb-lg-0">
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-semibold mb-3">
+            <i class="bi bi-cpu me-1"></i> ASP.NET Core Razor Pages + SQLite
+        </span>
+        <h1 class="display-4 fw-bold text-dark mb-3">Computers Management System</h1>
+        <p class="lead text-muted mb-4">
+            A fast, lightweight, and modern CRUD application to manage computer systems, workstations, and hardware inventories with zero SQL Server or SSMS dependencies.
+        </p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+            <a asp-page="/Computers/Index" class="btn btn-primary btn-lg px-4 shadow-sm fw-semibold">
+                <i class="bi bi-display me-2"></i> Manage Computers
+            </a>
+            <a asp-page="/Computers/Create" class="btn btn-outline-dark btn-lg px-4 fw-semibold">
+                <i class="bi bi-plus-circle me-2"></i> Add New Computer
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="card border-0 shadow-lg p-4 bg-white">
+            <h5 class="fw-bold mb-3"><i class="bi bi-lightning-charge-fill text-warning me-2"></i> Quick Features</h5>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                <li class="d-flex align-items-start">
+                    <span class="bg-primary-subtle text-primary rounded-circle p-2 me-3 d-inline-flex">
+                        <i class="bi bi-database-check"></i>
+                    </span>
+                    <div>
+                        <strong>SQLite Embedded DB</strong>
+                        <div class="text-muted small">Auto-created locally (<code>computers.db</code>). No SQL Server or SSMS required!</div>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <span class="bg-success-subtle text-success rounded-circle p-2 me-3 d-inline-flex">
+                        <i class="bi bi-check2-circle"></i>
+                    </span>
+                    <div>
+                        <strong>Complete CRUD Operations</strong>
+                        <div class="text-muted small">Create, View Details, Edit, and Delete computer records easily.</div>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <span class="bg-info-subtle text-info rounded-circle p-2 me-3 d-inline-flex">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <div>
+                        <strong>Real-time Search</strong>
+                        <div class="text-muted small">Instant search by brand, model, processor, or inventory status.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

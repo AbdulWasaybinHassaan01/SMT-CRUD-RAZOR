@@ -1,0 +1,63 @@
+@page "{id:int}"
+@model CRUD_Razor.Pages.Computers.DeleteModel
+@{
+    ViewData["Title"] = $"Delete {Model.Computer.Brand} {Model.Computer.Model}";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="d-flex align-items-center mb-3">
+            <a asp-page="Index" class="btn btn-outline-secondary btn-sm me-3">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
+            <h2 class="fw-bold mb-0 text-danger">Delete Computer</h2>
+        </div>
+
+        <div class="card border-danger shadow-sm">
+            <div class="card-header bg-danger text-white py-3">
+                <h5 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i> Confirm Deletion</h5>
+            </div>
+            <div class="card-body p-4">
+                <p class="fs-5 text-muted mb-4">Are you sure you want to permanently delete this computer record?</p>
+
+                <div class="bg-light p-3 rounded-3 mb-4">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 text-muted">ID</dt>
+                        <dd class="col-sm-8 fw-bold">#@Model.Computer.Id</dd>
+
+                        <dt class="col-sm-4 text-muted">Brand & Model</dt>
+                        <dd class="col-sm-8 fw-bold text-dark">@Model.Computer.Brand @Model.Computer.Model</dd>
+
+                        <dt class="col-sm-4 text-muted">Processor</dt>
+                        <dd class="col-sm-8">@(string.IsNullOrWhiteSpace(Model.Computer.Processor) ? "-" : Model.Computer.Processor)</dd>
+
+                        <dt class="col-sm-4 text-muted">RAM</dt>
+                        <dd class="col-sm-8">@(string.IsNullOrWhiteSpace(Model.Computer.Ram) ? "-" : Model.Computer.Ram)</dd>
+
+                        <dt class="col-sm-4 text-muted">Storage</dt>
+                        <dd class="col-sm-8">@(string.IsNullOrWhiteSpace(Model.Computer.Storage) ? "-" : Model.Computer.Storage)</dd>
+
+                        <dt class="col-sm-4 text-muted">Price</dt>
+                        <dd class="col-sm-8 text-primary fw-semibold">
+                            @(Model.Computer.Price.HasValue ? $"${Model.Computer.Price.Value:N2}" : "-")
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">Status</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-secondary">@Model.Computer.Status</span>
+                        </dd>
+                    </dl>
+                </div>
+
+                <form method="post" asp-route-id="@Model.Computer.Id">
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-page="Index" class="btn btn-light px-4">Cancel</a>
+                        <button type="submit" class="btn btn-danger px-4 fw-semibold">
+                            <i class="bi bi-trash-fill me-1"></i> Confirm Delete
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

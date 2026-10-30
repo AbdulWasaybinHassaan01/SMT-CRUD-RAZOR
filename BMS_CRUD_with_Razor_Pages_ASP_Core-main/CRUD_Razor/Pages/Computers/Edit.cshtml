@@ -1,0 +1,91 @@
+@page "{id:int}"
+@model CRUD_Razor.Pages.Computers.EditModel
+@{
+    ViewData["Title"] = $"Edit {Model.Computer.Brand} {Model.Computer.Model}";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="d-flex align-items-center mb-3">
+            <a asp-page="Index" class="btn btn-outline-secondary btn-sm me-3">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
+            <h2 class="fw-bold mb-0">Edit Computer</h2>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <form method="post">
+                    <input type="hidden" asp-for="Computer.Id" />
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="Computer.Brand" class="form-label fw-semibold">Brand / Manufacturer <span class="text-danger">*</span></label>
+                            <input asp-for="Computer.Brand" class="form-control" />
+                            <span asp-validation-for="Computer.Brand" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="Computer.Model" class="form-label fw-semibold">Model Name <span class="text-danger">*</span></label>
+                            <input asp-for="Computer.Model" class="form-control" />
+                            <span asp-validation-for="Computer.Model" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="Computer.Processor" class="form-label fw-semibold">Processor (CPU)</label>
+                            <input asp-for="Computer.Processor" class="form-control" />
+                            <span asp-validation-for="Computer.Processor" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="Computer.Ram" class="form-label fw-semibold">RAM (Memory)</label>
+                            <input asp-for="Computer.Ram" class="form-control" />
+                            <span asp-validation-for="Computer.Ram" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="Computer.Storage" class="form-label fw-semibold">Storage (SSD / HDD)</label>
+                            <input asp-for="Computer.Storage" class="form-control" />
+                            <span asp-validation-for="Computer.Storage" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="Computer.Price" class="form-label fw-semibold">Price ($ USD)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input asp-for="Computer.Price" type="number" step="0.01" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Computer.Price" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label asp-for="Computer.Status" class="form-label fw-semibold">Inventory Status</label>
+                            <select asp-for="Computer.Status" class="form-select">
+                                <option value="In Stock">In Stock</option>
+                                <option value="In Use">In Use</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Reserved">Reserved</option>
+                                <option value="Retired">Retired</option>
+                            </select>
+                            <span asp-validation-for="Computer.Status" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <hr class="my-4" />
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-page="Index" class="btn btn-light px-4">Cancel</a>
+                        <button type="submit" class="btn btn-warning px-4 fw-semibold text-dark">
+                            <i class="bi bi-check-lg me-1"></i> Update Computer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,117 @@
+@page
+@model CRUD_Razor.Pages.Computers.IndexModel
+@{
+    ViewData["Title"] = "Computers Management";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+    <div>
+        <h2 class="fw-bold mb-1"><i class="bi bi-display me-2 text-primary"></i>Computers Management</h2>
+        <p class="text-muted mb-0">View, search, and manage all computer inventory and workstations.</p>
+    </div>
+    <div>
+        <a asp-page="Create" class="btn btn-primary shadow-sm px-3 py-2 fw-semibold">
+            <i class="bi bi-plus-circle me-1"></i> Add New Computer
+        </a>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-body p-3">
+        <form method="get" class="row g-2 align-items-center">
+            <div class="col-md-9 col-sm-8">
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-search text-muted"></i></span>
+                    <input type="text" name="SearchTerm" value="@Model.SearchTerm" class="form-control border-start-0 ps-0" placeholder="Search by brand, model, processor, or status..." />
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 d-flex gap-2">
+                <button type="submit" class="btn btn-dark w-100 fw-medium">Search</button>
+                @if (!string.IsNullOrWhiteSpace(Model.SearchTerm))
+                {
+                    <a asp-page="Index" class="btn btn-outline-secondary">Reset</a>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-3" style="width: 60px;">#</th>
+                    <th>Brand & Model</th>
+                    <th>Processor</th>
+                    <th>RAM</th>
+                    <th>Storage</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th class="text-end pe-3" style="min-width: 220px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Computers.Count == 0)
+                {
+                    <tr>
+                        <td colspan="8" class="text-center py-5 text-muted">
+                            <i class="bi bi-laptop display-6 d-block mb-2 text-secondary"></i>
+                            <p class="mb-2 fs-5">No computers found.</p>
+                            <a asp-page="Create" class="btn btn-sm btn-primary">Add your first computer</a>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var comp in Model.Computers)
+                    {
+                        <tr>
+                            <td class="ps-3 text-muted fw-bold">@comp.Id</td>
+                            <td>
+                                <div class="fw-bold text-dark">@comp.Brand</div>
+                                <div class="small text-muted">@comp.Model</div>
+                            </td>
+                            <td>@(string.IsNullOrWhiteSpace(comp.Processor) ? "-" : comp.Processor)</td>
+                            <td><span class="badge bg-light text-dark border">@(string.IsNullOrWhiteSpace(comp.Ram) ? "-" : comp.Ram)</span></td>
+                            <td><span class="badge bg-light text-dark border">@(string.IsNullOrWhiteSpace(comp.Storage) ? "-" : comp.Storage)</span></td>
+                            <td class="fw-semibold text-primary">
+                                @(comp.Price.HasValue ? $"${comp.Price.Value:N2}" : "-")
+                            </td>
+                            <td>
+                                @{
+                                    string badgeClass = comp.Status switch
+                                    {
+                                        "In Stock" => "bg-success-subtle text-success border border-success-subtle",
+                                        "In Use" => "bg-primary-subtle text-primary border border-primary-subtle",
+                                        "Maintenance" => "bg-warning-subtle text-warning border border-warning-subtle",
+                                        "Retired" => "bg-secondary-subtle text-secondary border border-secondary-subtle",
+                                        _ => "bg-light text-dark border"
+                                    };
+                                }
+                                <span class="badge @badgeClass px-2 py-1">@(string.IsNullOrWhiteSpace(comp.Status) ? "Active" : comp.Status)</span>
+                            </td>
+                            <td class="text-end pe-3">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a asp-page="Details" asp-route-id="@comp.Id" class="btn btn-outline-info" title="View Details">
+                                        <i class="bi bi-eye"></i> View
+                                    </a>
+                                    <a asp-page="Edit" asp-route-id="@comp.Id" class="btn btn-outline-warning" title="Edit Computer">
+                                        <i class="bi bi-pencil"></i> Edit
+                                    </a>
+                                    <a asp-page="Delete" asp-route-id="@comp.Id" class="btn btn-outline-danger" title="Delete Computer">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer bg-white border-0 py-3 text-muted small d-flex justify-content-between align-items-center">
+        <span>Total Computers: <strong>@Model.Computers.Count</strong></span>
+        <span>Database: SQLite (<code>computers.db</code>)</span>
+    </div>
+</div>
